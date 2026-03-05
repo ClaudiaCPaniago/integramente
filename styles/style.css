@@ -1,0 +1,885 @@
+/* Variáveis de cores pastéis */
+:root {
+  --pastel-blue: #a8d8ea;
+  --pastel-green: #c7e9c0;
+  --pastel-yellow: #fff9c4;
+  --pastel-pink: #ffccd5;
+  --pastel-purple: #d4c1ec;
+  --pastel-orange: #ffd8be;
+  --light: #fdfdfd;
+  --dark: #5d6d7e;
+  --text: #566573;
+}
+
+/* Reset e estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--text);
+  line-height: 1.6;
+  font-family: "Nunito", sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Comic Neue", cursive;
+  color: var(--dark);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--pastel-pink);
+  color: var(--dark);
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Comic Neue", cursive;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #ffb3c1;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, var(--pastel-blue), var(--pastel-pink));
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Elementos decorativos */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.bubble-1 {
+  width: 120px;
+  height: 120px;
+  background-color: var(--pastel-yellow);
+  left: 5%;
+}
+
+.bubble-2 {
+  width: 80px;
+  height: 80px;
+  background-color: var(--pastel-pink);
+  top: 20%;
+  right: 8%;
+}
+
+.bubble-3 {
+  width: 100px;
+  height: 100px;
+  background-color: var(--pastel-blue);
+  bottom: 15%;
+  left: 10%;
+}
+
+bubble-4 {
+  width: 70px;
+  height: 70px;
+  background-color: var(--pastel-green);
+  bottom: 20%;
+  right: 5%;
+}
+
+/* Cabeçalho e Navegação */
+header {
+  background-color: white;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo i {
+  color: var(--pastel-pink);
+  font-size: 32px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(var(--pastel-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 600;
+  transition: color 0.3s;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  color: var(--pastel-blue);
+}
+
+.mobile-menu {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--dark);
+}
+
+/* Hero Section */
+.hero {
+  /* background: var(--pastel-blue); */
+  color: var(--dark);
+  padding: 180px 0 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: var(--pastel-yellow);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+  opacity: 0.4;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: var(--pastel-green);
+  border-radius: 50%;
+  bottom: -75px;
+  left: -75px;
+  opacity: 0.4;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: var(--text);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero p {
+  font-size: 20px;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: white;
+  font-weight: 500;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: var(--pastel-yellow);
+  color: var(--dark);
+  padding: 10px 25px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero .btn {
+  background-color: white;
+  color: var(--pastel-blue);
+  font-size: 20px;
+  padding: 15px 40px;
+}
+
+/* Serviços */
+.services {
+  background-color: var(--pastel-green);
+  position: relative;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--pastel-yellow);
+  color: var(--dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 32px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+/* Sobre */
+.about {
+  background-color: white;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--pastel-blue);
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.about-image {
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border: 8px solid var(--pastel-yellow);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.feature {
+  flex: 1;
+  min-width: 200px;
+  background-color: var(--pastel-pink);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+}
+
+/* Profissionais*/
+.professionals {
+  background-color: var(--pastel-yellow);
+}
+
+.professionals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.professional-card {
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.professional-card:hover {
+  transform: translateY(-10px);
+}
+
+.professional-img {
+  height: 250px;
+  overflow: hidden;
+}
+
+.professional-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.professional-card:hover .professional-img img {
+  transform: scale(1.1);
+}
+
+.professional-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.professional-info h3 {
+  color: var(--pastel-blue);
+  margin-bottom: 10px;
+}
+
+.professional-info p {
+  margin-bottom: 15px;
+}
+
+.specialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.specialty {
+  background-color: var(--pastel-pink);
+  color: var(--dark);
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Seção de Convênios */
+.convenios {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9f2f5 100%);
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.convenios::before {
+  content: "🤝";
+  position: absolute;
+  font-size: 150px;
+  opacity: 0.05;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.convenios .section-title p {
+  color: var(--text);
+  font-size: 18px;
+  margin-top: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.convenios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin: 40px 0;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.convenio-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 25px 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.convenio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--pastel-blue);
+  background-color: #ffffff;
+}
+
+.convenio-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, var(--pastel-yellow), var(--pastel-pink));
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.convenio-card h3 {
+  color: var(--dark);
+  font-size: 16px;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Estilo para os logos */
+.convenio-logo {
+  width: 100px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+  border-radius: 12px;
+  padding: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.convenio-card:hover .convenio-logo {
+  transform: scale(1.1);
+  background-color: white; /* Fundo branco no hover */
+  border-color: var(--pastel-blue); /* Borda colorida no hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.convenios-message {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: rgba(168, 216, 234, 0.2);
+  border-radius: 50px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px dashed var(--pastel-blue);
+}
+
+.convenios-message p {
+  color: var(--dark);
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.convenios-message i {
+  color: var(--pastel-pink);
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .convenios-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .convenio-card {
+    padding: 20px 10px;
+  }
+
+  .convenio-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+  }
+
+  .convenio-card h3 {
+    font-size: 14px;
+  }
+
+  .convenio-logo {
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 6px;
+  }
+
+  .convenios-message {
+    padding: 15px;
+    border-radius: 30px;
+  }
+
+  .convenios-message p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .convenios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .convenios::before {
+    font-size: 100px;
+  }
+}
+
+/* Contato */
+.contact {
+  background-color: white;
+}
+
+.contact-content {
+  display: flex;
+  gap: 50px;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  background-color: var(--pastel-green);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.contact-icon {
+  background-color: white;
+  color: var(--pastel-blue);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+  font-size: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details h3 {
+  color: var(--dark);
+  margin-bottom: 5px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Estilos para o mapa clicável */
+.contact-map {
+  flex: 1;
+  /* background-color: var(--pastel-green); */
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-map h3 {
+  color: var(--dark);
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.map-clickable {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 4px solid white;
+  position: relative;
+  z-index: 1;
+}
+
+.map-container iframe {
+  display: block;
+  pointer-events: none; /* Isso impede que o iframe capture o clique */
+  transition: transform 0.5s ease;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(211, 211, 211, 0.452);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 15px;
+}
+
+.map-overlay i {
+  font-size: 40px;
+  color: white;
+  background-color: var(--pastel-green);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 3px solid white;
+}
+
+.map-overlay span {
+  background-color: white;
+  color: var(--dark);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Comic Neue", cursive;
+}
+
+/* Efeitos hover */
+.map-clickable:hover .map-container iframe {
+  transform: scale(1.05);
+}
+
+.map-clickable:hover .map-overlay {
+  opacity: 1;
+}
+
+/* Efeito de clique */
+.map-clickable:active .map-container {
+  transform: scale(0.98);
+}
+
+/* Ajuste para o link do mapa */
+.map-clickable {
+  outline: none;
+}
+
+.map-clickable:focus-visible {
+  outline: 3px solid var(--pastel-pink);
+  border-radius: 15px;
+}
+
+/* Rodapé */
+/* Footer simples */
+footer {
+  background-color: var(--pastel-blue);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.copyright p {
+  color: white;
+  font-size: 14px;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+}
+
+/* Botão do WhatsApp */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .about-content,
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .contact-map {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .hero h2 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+
+  .footer-column {
+    flex: 1 0 100%;
+  }
+
+  .map-container iframe {
+    height: 280px;
+  }
+
+  .map-overlay i {
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .map-overlay span {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  .copyright p {
+    font-size: 12px;
+    padding: 0 15px;
+  }
+}
