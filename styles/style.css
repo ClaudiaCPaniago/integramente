@@ -240,7 +240,7 @@ header {
   font-size: 20px;
   max-width: 700px;
   margin: 0 auto 30px;
-  color: white;
+  color: black;
   font-weight: 500;
 }
 
@@ -576,54 +576,6 @@ header {
   font-size: 20px;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .convenios-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-  }
-
-  .convenio-card {
-    padding: 20px 10px;
-  }
-
-  .convenio-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 30px;
-  }
-
-  .convenio-card h3 {
-    font-size: 14px;
-  }
-
-  .convenio-logo {
-    width: 80px;
-    height: 50px;
-    border-radius: 10px;
-    padding: 6px;
-  }
-
-  .convenios-message {
-    padding: 15px;
-    border-radius: 30px;
-  }
-
-  .convenios-message p {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .convenios-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .convenios::before {
-    font-size: 100px;
-  }
-}
-
 /* Contato */
 .contact {
   background-color: white;
@@ -881,5 +833,98 @@ footer {
   .copyright p {
     font-size: 12px;
     padding: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex !important;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    padding: 10px 20px;
+    display: block;
+  }
+
+  .mobile-menu {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .convenios-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .convenio-card {
+    padding: 20px 10px;
+  }
+
+  .convenio-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+  }
+
+  .convenio-card h3 {
+    font-size: 14px;
+  }
+
+  .convenio-logo {
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 6px;
+  }
+
+  .convenios-message {
+    padding: 15px;
+    border-radius: 30px;
+  }
+
+  .convenios-message p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .convenios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .convenios::before {
+    font-size: 100px;
   }
 }

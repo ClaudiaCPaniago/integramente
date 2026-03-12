@@ -1,37 +1,33 @@
-// Menu mobile
-document.querySelector(".mobile-menu").addEventListener("click", function () {
+// Menu mobile - Versão com classe active
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenu = document.querySelector(".mobile-menu");
   const navLinks = document.querySelector(".nav-links");
-  navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
-});
 
-// Smooth scroll para links internos
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
+  mobileMenu.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
 
-    const targetId = this.getAttribute("href");
-    if (targetId === "#") return;
-
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop - 80,
-        behavior: "smooth",
-      });
-
-      // Fechar menu mobile após clicar em um link
-      if (window.innerWidth <= 768) {
-        document.querySelector(".nav-links").style.display = "none";
-      }
+    // Alternar ícone
+    const icon = mobileMenu.querySelector("i");
+    if (navLinks.classList.contains("active")) {
+      icon.className = "fas fa-times";
+    } else {
+      icon.className = "fas fa-bars";
     }
   });
-});
 
-// Ajustar menu mobile na redimensionamento da tela
-window.addEventListener("resize", function () {
-  if (window.innerWidth > 768) {
-    document.querySelector(".nav-links").style.display = "flex";
-  } else {
-    document.querySelector(".nav-links").style.display = "none";
-  }
+  // Fechar ao clicar em um link
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      mobileMenu.querySelector("i").className = "fas fa-bars";
+    });
+  });
+
+  // Fechar ao redimensionar para desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      navLinks.classList.remove("active");
+      mobileMenu.querySelector("i").className = "fas fa-bars";
+    }
+  });
 });
