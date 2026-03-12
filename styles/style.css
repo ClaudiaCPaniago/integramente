@@ -724,7 +724,6 @@ body {
   transform: scale(0.98);
 }
 
-/* Ajuste para o link do mapa */
 .map-clickable {
   outline: none;
 }
@@ -735,7 +734,7 @@ body {
 }
 
 /* Rodapé */
-/* Footer simples */
+
 footer {
   background-color: var(--pastel-blue);
   padding: 20px 0;
